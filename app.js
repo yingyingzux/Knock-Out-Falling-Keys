@@ -85,7 +85,7 @@
 
 
       // Set random falling speed between 80% and 120% of the default value (5000ms)
-      const fallingSpeed = 5000 * (Math.random() * 0.4 + 0.8);
+      const fallingSpeed = 5000 * (Math.random() * 1.0 + 0.1);
 
       // add event listeners for both click and touchstart
       key.addEventListener("click", onKeyClick);
