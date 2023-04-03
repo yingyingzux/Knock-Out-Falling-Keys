@@ -87,31 +87,9 @@
       // Set random falling speed between 80% and 120% of the default value (5000ms)
       const fallingSpeed = 5000 * (Math.random() * 0.4 + 0.8);
 
-      key.addEventListener("click", () => {
-        const success = document.createElement("div");
-        success.classList.add("success");
-        success.innerHTML = "✔";
-        success.style.top = key.offsetTop + "px";
-        success.style.left = key.offsetLeft + "px";
-        gameBoard.appendChild(success);
-        numKeysKnockedOut++;
-
-        setTimeout(() => {
-          success.remove();
-          key.classList.add("success-highlight", "blink");
-          setTimeout(() => {
-            numKeysFalling--;
-            fallingKeys = fallingKeys.filter((k) => k !== key);
-            key.remove();
-            updateKeyOrder();
-          }, 100);
-        }, 300);
-
-        key.style.color = "#87cefa";
-        setTimeout(() => {
-          key.style.color = "white";
-        }, 500);
-      });
+      // add event listeners for both click and touchstart
+      key.addEventListener("click", onKeyClick);
+      key.addEventListener("touchstart", onKeyClick);
 
       setTimeout(() => {
         numKeysFalling--;
@@ -187,5 +165,38 @@
       }
     }
 
+    function onKeyClick(event) {
+      const clickedElement = document.elementFromPoint(
+        event.clientX,
+        event.clientY
+      );
+      if (clickedElement.classList.contains("key")) {
+        const success = document.createElement("div");
+        success.classList.add("success");
+        success.innerHTML = "✔";
+        success.style.top = clickedElement.offsetTop + "px";
+        success.style.left = clickedElement.offsetLeft + "px";
+        gameBoard.appendChild(success);
+        numKeysKnockedOut++;
+
+        setTimeout(() => {
+          success.remove();
+          clickedElement.classList.add("success-highlight", "blink");
+          setTimeout(() => {
+            numKeysFalling--;
+            fallingKeys = fallingKeys.filter((k) => k !== clickedElement);
+            clickedElement.remove();
+            updateKeyOrder();
+          }, 100);
+        }, 300);
+
+        clickedElement.style.backgroundColor = "#87cefa";
+        setTimeout(() => {
+          clickedElement.style.backgroundColor = "white";
+        }, 500);
+      }
+
+      clickedElement.classList.add("success-highlight");
+    }
 
     

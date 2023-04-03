@@ -105,6 +105,26 @@ p {
   transition: transform 0.3s ease;
 }
 
+.key.success-highlight {
+  outline: 10px solid #87cefa;
+  transform: scale(1.1);
+  /* border-radius: 50%; */
+  color: white;
+  -webkit-appearance: none;
+}
+
+/* Safari */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    .key .success-highlight {
+      -webkit-box-shadow: 0px 0px 0px 5px #87cefa;
+      box-shadow: 0px 0px 0px 5px #87cefa;
+      border-radius: 50%;
+      color: white;
+    }
+  }
+}
+
 .success {
   position: absolute;
   font-size: 2em;
@@ -123,9 +143,7 @@ p {
   }
 }
 
-.success-highlight {
-  color: white;
-}
+
 
 .blink {
   animation: blink 0.5s linear;
