@@ -38,7 +38,6 @@
 
     resetButton.addEventListener("click", resetGame);
 
-
     function updateTime() {
       const now = new Date();
       const timeDiffInSeconds = Math.floor((now - startTime) / 1000);
@@ -219,5 +218,12 @@
         modal.style.display = "none";
       }
     }
+
+    // When the user taps anywhere outside of the modal, close it
+    window.addEventListener('touchend', (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
 
     

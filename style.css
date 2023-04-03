@@ -12,14 +12,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #373D3F;
+  color: #24373d;
   overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   text-align: center;
 }
 
@@ -64,7 +64,6 @@ p {
 #reset-button, #about-button {
   font-size: 1em;
   padding: 0.5em 1em;
-  background-color: #76bce8;
   border: none;
   color: white;
   border-radius: 0.5em;
@@ -77,7 +76,7 @@ p {
 }
 
 #about-button {
-  background-color: #c3d0d9;
+  background-color: #8bcbe8;
 }
 
 #reset-button:hover, #about-button:hover {
@@ -226,7 +225,7 @@ p {
   background-color: #f7f7f7;
   border-radius: 5px;
   padding: 1.5em;
-  max-width: 60%;
+  max-width: 80%;
   text-align: left;
   position: relative;
   overflow: auto;
@@ -247,38 +246,32 @@ p {
 
 /* Style for the close button */
 .modal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1.5em;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0.5em;
-}
-
-/* The Close Button */
-.close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 2em;
+  padding: 0.25em;
+  position: absolute;
+  top: 1.2em;
+  right: 1.2em;
+  cursor: pointer;
+  transform: translate(50%, -50%);
 }
 
-.close:hover,
-.close:focus {
-  color: black;
+.modal-close:hover,
+.modal-close:focus {
+  color: #24373d;
   text-decoration: none;
   cursor: pointer;
+  background-color: #f7f7f7;
+  border-radius: 50%;
+  padding: 0.2em;
 }
 
 @media screen and (max-width: 767px) {
   .modal {
     font-size: 16px;
-    
   }
   .modal-content {
-    margin: 20% auto;
-    width: calc(90% - 40px);
+    margin: 20px auto;
   }
 }
 
