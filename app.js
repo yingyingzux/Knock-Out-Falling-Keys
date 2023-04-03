@@ -50,7 +50,7 @@
     }
 
     function createKey() {
-      if (numKeysFalling >= 10) return;
+      if (numKeysFalling >= 20) return;
       numKeysFalling++;
 
       const key = document.createElement("div");
@@ -85,7 +85,7 @@
 
 
       // Set random falling speed between 80% and 120% of the default value (5000ms)
-      const fallingSpeed = 5000 * (Math.random() * 1.0 + 0.1);
+      const fallingSpeed = 5000 * (Math.random() * 1.5 + 0.1);
 
       // add event listeners for both click and touchstart
       key.addEventListener("click", onKeyClick);
@@ -138,12 +138,12 @@
             lowestKey.remove();
             updateKeyOrder();
           }, 100);
-        }, 300);
+        }, 200);
 
         lowestKey.style.backgroundColor = "#87cefa";
         setTimeout(() => {
           lowestKey.style.backgroundColor = "#ffffff";
-        }, 500);
+        }, 200);
       }
     });
 
@@ -154,16 +154,16 @@
       return sortedKeys[0];
     }
 
-    function updateKeyOrder() {
-      for (let i = 0; i < fallingKeys.length; i++) {
-        const key = fallingKeys[i];
-        key.classList.remove("closest-to-bottom");
-      }
-      const lowestKey = getLowestKey();
-      if (lowestKey) {
-      lowestKey.classList.add("closest-to-bottom");
-      }
-    }
+    // function updateKeyOrder() {
+    //   for (let i = 0; i < fallingKeys.length; i++) {
+    //     const key = fallingKeys[i];
+    //     key.classList.remove("closest-to-bottom");
+    //   }
+    //   const lowestKey = getLowestKey();
+    //   if (lowestKey) {
+    //   lowestKey.classList.add("closest-to-bottom");
+    //   }
+    // }
 
     function onKeyClick(event) {
       const clickedElement = document.elementFromPoint(
@@ -188,12 +188,12 @@
             clickedElement.remove();
             updateKeyOrder();
           }, 100);
-        }, 300);
+        }, 200);
 
         clickedElement.style.backgroundColor = "#87cefa";
         setTimeout(() => {
         clickedElement.style.backgroundColor = "#ffffff";
-        }, 500);
+        }, 200);
       }
 
       clickedElement.classList.add("success-highlight");
