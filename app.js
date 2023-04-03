@@ -46,7 +46,7 @@
       minutes = Math.floor((timeDiffInSeconds % 3600) / 60);
       seconds = timeDiffInSeconds % 60;
       const timeString = `${hours > 0 ? hours + " hour" + (hours > 1 ? "s" : "") + " " : ""}${minutes > 0 ? minutes + " minute" + (minutes > 1 ? "s" : "") + " " : ""}${seconds} second${seconds > 1 ? "s" : ""}`;
-      scoreDisplay.textContent = `You knocked out ${numKeysKnockedOut} keys in ${timeString}`;
+      scoreDisplay.innerHTML = `${numKeysKnockedOut} keys knocked out <br> within ${timeString}`;
     }
 
     function createKey() {
@@ -197,6 +197,27 @@
       }
 
       clickedElement.classList.add("success-highlight");
+    }
+
+    const modal = document.querySelector('.modal');
+    const aboutButton = document.querySelector('#about-button');
+    const closeButton = document.querySelector('.modal-close');
+
+    // Show the modal when the About Game button is clicked
+    aboutButton.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
+    // Hide the modal when the close button is clicked
+    closeButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
 
     
