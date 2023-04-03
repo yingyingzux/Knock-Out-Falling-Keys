@@ -140,9 +140,9 @@
           }, 100);
         }, 300);
 
-        lowestKey.style.color = "#87cefa";
+        lowestKey.style.backgroundColor = "#87cefa";
         setTimeout(() => {
-          lowestKey.style.color = "white";
+          lowestKey.style.backgroundColor = "#ffffff";
         }, 500);
       }
     });
@@ -192,7 +192,7 @@
 
         clickedElement.style.backgroundColor = "#87cefa";
         setTimeout(() => {
-          clickedElement.style.backgroundColor = "white";
+        clickedElement.style.backgroundColor = "#ffffff";
         }, 500);
       }
 
