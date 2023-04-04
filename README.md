@@ -9,7 +9,7 @@ I collaborated with ChatGPT-3.5 to develop this game from scratch. While it wrot
 
 I hope you have fun playing this game and feel free to share it with anyone who you think may enjoy it.
 
-Best regards,
-Yingying
+Best,
+
 
 Note: I did not ask ChatGPT to clean up the code due to the limited number of tokens it can respond, but of course it's capable to do that.
