@@ -169,33 +169,45 @@
         event.clientX,
         event.clientY
       );
-      if (clickedElement.classList.contains("key")) {
-        const success = document.createElement("div");
-        success.classList.add("success");
-        success.innerHTML = "✔";
-        success.style.top = clickedElement.offsetTop + "px";
-        success.style.left = clickedElement.offsetLeft + "px";
-        gameBoard.appendChild(success);
-        numKeysKnockedOut++;
-
-        setTimeout(() => {
-          success.remove();
-          clickedElement.classList.add("success-highlight", "blink");
-          setTimeout(() => {
-            numKeysFalling--;
-            fallingKeys = fallingKeys.filter((k) => k !== clickedElement);
-            clickedElement.remove();
-            updateKeyOrder();
-          }, 100);
-        }, 200);
-
-        clickedElement.style.backgroundColor = "#87cefa";
-        setTimeout(() => {
-        clickedElement.style.backgroundColor = "#ffffff";
-        }, 200);
+      
+      if (!clickedElement.classList.contains("key")) {
+        return;
       }
 
-      clickedElement.classList.add("success-highlight");
+      if (clickedElement.classList.contains("clicked")) {
+        return;
+      }
+
+      clickedElement.classList.add("clicked");
+      setTimeout(() => {
+        clickedElement.classList.remove("clicked");
+      }, 300);
+
+      const success = document.createElement("div");
+      success.classList.add("success");
+      success.innerHTML = "✔";
+      success.style.top = clickedElement.offsetTop + "px";
+      success.style.left = clickedElement.offsetLeft + "px";
+      gameBoard.appendChild(success);
+      numKeysKnockedOut++;
+
+      setTimeout(() => {
+        success.remove();
+        clickedElement.classList.add("success-highlight", "blink");
+        setTimeout(() => {
+          numKeysFalling--;
+          fallingKeys = fallingKeys.filter((k) => k !== clickedElement);
+          clickedElement.remove();
+          updateKeyOrder();
+          allowClick = true; // Set allowClick to true again
+        }, 100);
+      }, 200);
+
+      clickedElement.style.backgroundColor = "#87cefa";
+      setTimeout(() => {
+        clickedElement.style.backgroundColor = "#ffffff";
+        clickedElement.classList.remove("success-highlight"); // Add this line to remove the class after the delay
+      }, 200);
     }
 
     const modal = document.querySelector('.modal');
