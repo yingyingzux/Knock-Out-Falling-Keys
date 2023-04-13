@@ -9,7 +9,9 @@ I collaborated with ChatGPT-3.5 to develop this game from scratch. While it wrot
 
 I hope you have fun playing this game and feel free to share it with anyone who you think may enjoy it.
 
-[Play this game](http://yingyingz.com/exp/keys) | [Write-up on key learnings](https://www.yingyingz.com/2023/04/a-delightful-experience-of-teaming-up-with-chatgpt-to-build-a-simple-game/)
+- [Play this game](http://yingyingz.com/exp/keys)
+
+- Write-up on key learnings: [English](https://www.yingyingz.com/2023/04/a-delightful-experience-of-teaming-up-with-chatgpt-to-build-a-simple-game/) | [Chinese](https://www.yingyingz.com/2023/04/a-delightful-experience-of-teaming-up-with-chatgpt-to-build-a-simple-game/)
 
 
 Note: I did not ask ChatGPT to clean up the code due to the limited number of tokens it can respond, but of course it's capable to do that.
