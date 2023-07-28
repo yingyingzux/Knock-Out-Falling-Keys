@@ -1,7 +1,7 @@
 # Knock out some falling keys!
 Looking for a break from your busy life? Come and knock out some falling keys before they hit the ground!
 
-The game has no time limit or game over, so it's perfect when you just want to unwind whiling listening to some music, news, or podcasts. All you need to do is tap on the falling keys to make them disappear; if you're playing on a desktop browser, type the key that matches the closest one to the bottom.
+The game has no time limit or game over, so it's perfect when you just want to unwind while listening to some music, news, or podcasts. All you need to do is tap on the falling keys to make them disappear; if you're playing on a desktop browser, type the key that matches the closest one to the bottom.
 
 ![Screen capture of the falling keys game](https://media3.giphy.com/media/Rw3I3T2pBWxbSYgfe6/giphy.gif)
 
